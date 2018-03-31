@@ -5,7 +5,6 @@ class API:
         self.session=requests.session()
 
     def login(self):
-        global SESSION_TOKEN
         LoadedPage = self.session.get("http://192.168.1.1")
         Logintoken=LoadedPage.text[LoadedPage.text.find("getObj(\"Frm_Logintoken\").value = \"")+34:]
         Logintoken=Logintoken[0:Logintoken.find("\"")]
